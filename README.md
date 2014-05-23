@@ -8,8 +8,20 @@ Installation
 
 Create OpenShift application
 
-    rhc app create -a presos -t ruby-1.9 --from-code=https://github.com/eschabell/openshift-presos-awstruct.git
+    rhc app create -a presos -t ruby-1.9 --from-code=https://github.com/eschabell/openshift-presos-awestruct.git
 
+or
+
+    rhc app create -a presos -t ruby-1.9
+    
+    cd presos
+    
+    git remote add upstream -m master git://github.com/eschabell/openshift-presos-awestruct.git
+
+    git pull -s recursive -X theirs upstream master
+
+    git push
+    
 now build your presentation using Awestruct. Once done, copy the _site directory to your OpenShift instance.
 
     cp -rv  $project/_site presos/lib
