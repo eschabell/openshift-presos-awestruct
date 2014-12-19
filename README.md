@@ -1,27 +1,19 @@
 How to run Awestruct Presentation Hosting on OpenShift
 ======================================================
-
 This will give you an empty ruby instance on OpenShift for hosting your presentations on an Awestruct site.
 
-Installation
-------------
 
-Create OpenShift application
+Install with one click
+----------------------
+[![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Click to install.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=ruby-1.9&initial_git_url=https://github.com/eschabell/openshift-presos-awestruct.git&name=presos)
+
+
+Manual install on OpenShift
+---------------------------
+Use 'rhc' tooling:
 
     rhc app create -a presos -t ruby-1.9 --from-code=https://github.com/eschabell/openshift-presos-awestruct.git
 
-or
-
-    rhc app create -a presos -t ruby-1.9
-    
-    cd presos
-    
-    git remote add upstream -m master git://github.com/eschabell/openshift-presos-awestruct.git
-
-    git pull -s recursive -X theirs upstream master
-
-    git push
-    
 now build your presentation using Awestruct. Once done, copy the _site directory to your OpenShift instance.
 
     cp -rv  $project/_site presos/lib
@@ -48,6 +40,8 @@ What is this project doing?
 
 Releases
 --------
+
+- v0.4 - added one click install button.
 
 - v0.3 - moved to ruby cartridge, now building site from lib dir each push.
 
