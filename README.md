@@ -1,3 +1,6 @@
+Update: June 2018 moved to [Gitlab](https://gitlab.com/eschabell/openshift-presos-awestruct)
+
+
 How to run Awestruct Presentation Hosting on OpenShift
 ======================================================
 This will give you an empty ruby instance on OpenShift for hosting your presentations on an Awestruct site.
